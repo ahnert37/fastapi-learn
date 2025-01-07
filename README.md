@@ -1,0 +1,1 @@
+studying fastapi from [docs](https://fastapi.tiangolo.com/learn/)
