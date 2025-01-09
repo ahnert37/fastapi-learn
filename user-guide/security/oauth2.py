@@ -65,3 +65,8 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
 async def read_users_me(current_user: User = Depends(get_current_user)):
     return current_user
 
+@app.get("/users/me/items/")
+async def read_own_items(
+    current_user: Annotated[User, Depends(get_current_user)]
+):
+    return [{"item_id": "Foo", "owner": current_user.username}]
